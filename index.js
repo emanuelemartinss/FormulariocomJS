@@ -18,34 +18,33 @@ form.addEventListener ('submit', (e) => {
 
     const regexPassword = /^[\w&.\-]+$/
 
-    if {}
-
-    console.info (nome, idade, acompanhadoPelosPais, temIngressos, temCovid);
-
-    const listaDeNomes = nome.split (" ");
-
-if (listaDeNomes. length < 2) {
-    alert("Por favor, digite seu nome completo");
-    return;
+if(regexPassword.test(password)){
+      alert("Senha inválida");
+      feedbackBody(true)
+      return;
 }
-
+    const listaDeNomes = nome.split(" ");
+ 
+    if(listaDeNomes.length < 2){
+        alert("Por favor, digite seu nome completo");
+        feedbackBody(true)
+        return;
+}
 if (idade <18){
     if (acompanhadoPelosPais) {
     alert("Você é menor de idade, e está acompanhando pelos pais, não pode entrar")
-   }
 }
-
-if (temCovid) {
-    alert("Você está com covid, não pode entrar");
-    return
-}
-
-const registeredDiv = document.getElementById("registered")
-
-registeredDiv.innerText = "Registrado!"
-
-const body = document.querySelector("body");
-
-body.style.backgroundColor = "green";
-
+ if(idade < 18) {
+        if(!acompanhadoPelosPais){
+            alert("Você é menor de idade, e não está acompanhado pelos pais");
+            feedbackBody(true)
+            return
+     } 
+    } 
+    if(temCovid){
+        alert("Você está com covid, não pode entrar");
+        feedbackBody(true)
+        return
+    }
+  feedbackBody(false)
 })
