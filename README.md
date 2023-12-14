@@ -1,1 +1,1 @@
-Primeira exercício com lógica de JS.
+Primeiro exercício com lógica de JS.
